@@ -1,0 +1,5 @@
+[base]
+name=rhels7.5
+baseurl=http://192.168.122.1/rhels7.5
+enabled=1
+gpgcheck=0

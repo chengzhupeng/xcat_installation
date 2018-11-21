@@ -1,0 +1,175 @@
+    1  hostnamectl set-hostname mgt.cluster
+    2  ls
+    3  exit
+    4  ip a
+    5  vim /etc/sysconfig/grub 
+    6  grub2-mkconfig -o /boot/grub2/grub.cfg 
+    7  reboot
+    8  poweroff
+    9  nmcli connection show
+   10  ip a
+   11  nmcli connection delete eth0
+   12  nmcli connection add con-name eth0 ifname eth0 type ethernet autoconnect yes ip4 192.168.122.183/24
+   13  ip a
+   14  ping 192.168.122.1
+   15  nmcli connection add con-name ens8 ifname ens8 type ethernet autoconnect yes ip4 172.20.0.1/16 ip4 172.29.0.1/16 ip4 172.30.0.1/16
+   16  vim /etc/gdm/custom.conf 
+   17  vim /etc/gdm/custom.conf 
+   18  reboot
+   19  vim /etc/yum.repos.d/local.repo
+   20  exit
+   21  tar zjvf 18c.tar.bz2 
+   22  tar xjvf 18c.tar.bz2 
+   23  cd lenovo-hpc-el7/
+   24  bash mklocalrepo.sh 
+   25  ip a
+   26  yum install xCAT
+   27  getenforce 
+   28  vim /etc/sysconfig/selinux 
+   29  iptables -L
+   30  poweroff
+   31  geten
+   32  getenforce 
+   33  iptables -L
+   34  iptables -F
+   35  powerof
+   36  poweroff
+   37  ls
+   38  history 
+   39  iptables -L
+   40  iptables -F
+   41  service iptables stop
+   42  systemctl disable iptables 
+   43  systemctl disable iptables.service 
+   44  chkconfig iptables --list
+   45  systemctl list-dependencies multi-users
+   46  systemctl list-dependencies iptables
+   47  systemctl disable iptables.service
+   48  systemctl iptables.service
+   49  reboot
+   50  iptables -L
+   51  iptables -F
+   52  iptables -h
+   53  iptables save
+   54  iptables -S
+   55  cat /etc/sysconfig/iptables-config 
+   56  iptables-save 
+   57  date
+   58  rebppt
+   59  reboot
+   60  cp color_output /usr/local/lib/
+   61  bash xcat_config.sh 
+   62  vim xcat_config.sh 
+   63  cat xcat_config.sh 
+   64  nodeadd switch1 groups=switch
+   65  nodech switch switches.password="RO"
+   66  tabdump switch01
+   67  tabdump switch
+   68  tabdump switches
+   69  nodeadd n01-n04 groups==ipmi,42perswitch,84nodeperrack,compute,all,RACKA1,MFG20181120,c1
+   70  lsdef node01
+   71  lsdef n01
+   72  nodels
+   73  nodeadd n01-n04 groups==ipmi,42perswitch,84nodeperrack,compute,all,RACKA1,MFG20181120,c1
+   74  nodels
+   75  nodeadd n01-n04 groups=ipmi,42perswitch,84nodeperrack,compute,all,RACKA1,MFG20181120,c1
+   76  nodels
+   77  lsdef n01
+   78  tabdump ipmi
+   79  nodeadd n[01-04]-bmc groups=bmc,84bmcperrack
+   80  lsdef n01-bmc
+   81  tabedit hosts
+   82  lsdef c1 -i ip
+   83  lsdef bmc -i ip
+   84  lsdef switch -i ip
+   85  nodeadd smm[01-04] groups=smm
+   86  tabedit ipmi
+   87  lsdef smm
+   88  tabedit hosts
+   89  lsdef smm
+   90  tabdump nodehm
+   91  cat /etc/hosts
+   92  makeconfluentcfg all,smm
+   93  ip a
+   94  cat /etc/hosts
+   95  makedhcp -n
+   96  makedns -n
+   97  reboot
+   98  ls
+   99  hostnamectl set-hostname mgt.cluster
+  100  iptables -L
+  101  cat /etc/sysconfig/selinux 
+  102  sed -i sed -i 's#SELINUX=#SELINUX=disablexx#' /etc/sysconfig/selinux
+  103   sed -i 's#SELINUX=#SELINUX=disablexx#' /etc/sysconfig/selinux
+  104  cat /etc/sysconfig/selinux 
+  105   sed -i 's#SELINUX=.*#SELINUX=disabled#' /etc/sysconfig/selinux
+  106  cat /etc/sysconfig/selinux 
+  107  ipa 
+  108  ip a
+  109  history | grpe nmcli
+  110  history | grep nmcli
+  111  ls 
+  112  cd /opt/xcat/share/xcat/templates/e1350/
+  113  ls
+  114  cd
+  115  ls
+  116  cat xcat_config.sh 
+  117  chtab node=compute nodehm.serialport=0 nodehm.serialspeed=115200 nodehm.serialflow=hard
+  118  #
+  119  chtab node=smm nodehm.mgt=ipmi
+  120  tabdump nodehm
+  121  vim xcat_config.sh 
+  122  lsdef smm
+  123  yum install lenovo-confluent 
+  124  source /etc/profile.d/confluent_env.sh 
+  125  systemctl enable confluent.service 
+  126  systemctl start confluent
+  127  vim /etc/hosts
+  128  makehosts smm,bmc,ipmi
+  129  cat /etc/host
+  130  makehosts switch
+  131  cat /etc/hosts
+  132  tabdump hosts
+  133  tabedit hosts
+  134  makehosts switch
+  135  cat /etc/hosts
+  136  lsdef smm01
+  137  lsdef smm02
+  138  iptables -L
+  139  iptables -F
+  140  iptables -L
+  141  grep subnet /etc/dhcp/dhcpd.conf
+  142  ip a
+  143  ip -4 route
+  144  scp 192.168.122.1:/root/dhcp.pm .
+  145  find /opt/ -name dhcp.pm
+  146  diff dhcp.pm /opt/xcat/lib/perl/xCAT_plugin/dhcp.pm
+  147  ip a
+  148  cp /opt/xcat/lib/perl/xCAT_plugin/dhcp.pm dhcp.pm.orgi
+  149  cp dhcp.pm  /opt/xcat/lib/perl/xCAT_plugin/
+  150  service dhcpd restart
+  151  makedhcp -n
+  152  grep subnet /etc/dhcp/dhcpd.conf
+  153  makedns -n
+  154   confetty create /nodegroups/switch
+  155   confetty create /nodes/switch1 groups=switch
+  156  cat /etc/hosts
+  157   confetty set /nodegroups/switch/attributes/current secret.hardwaremanagementpassword="RO"
+  158   confetty set /nodegroups/everything/attributes/current discovery.policy=open
+  159  nodeattrib n01
+  160  nodeattrib ipmi cosole.method=ipmi
+  161  nodeattrib ipmi cosole.method ipmi
+  162  nodeattrib ipmi console.method=ipmi
+  163  nodeattrib n01
+  164   nodeattrib smm01 net.switch=switch01 net.switchport=33
+  165    nodeattrib smm02 enclosure.extends=smm01
+  166    nodeattrib smm04 enclosure.extends=smm02
+  167    nodeattrib smm03 enclosure.extends=smm02
+  168    nodeattrib smm04 enclosure.extends=smm03
+  169  nodeattrib smm -i enclosure
+  170  nodeattrib smm  enclosure
+  171  history 
+  172  poweroff
+  173  history 
+  174  history >command.history
+ rmdef -t network 192_168_124_0-255_255_255_0
