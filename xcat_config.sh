@@ -12,6 +12,7 @@ chdef -t site clustersite master=172.20.0.1
 chdef -t site clustersite nameservers=172.20.0.1
 chdef -t site clustersite domain=cluster
 chdef -t site clustersite dhcpinterfaces=ens8
+chdef -t site clustersite consoleservice=confluent
 #
 #
 myred "Start to config the Networks Table"
